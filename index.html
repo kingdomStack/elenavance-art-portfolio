@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elena Vance | Contemporary Fine Art Painter</title>
+    <meta name="description" content="Elena Vance - Contemporary fine art painter creating abstract, modern, and landscape masterpieces.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors */
+            --white: #ffffff;
+            --off-white: #f8f8f8;
+            --light-gray: #f0f0f0;
+            --charcoal: #333333;
+            --dark-charcoal: #1a1a1a;
+            --gold: #c9a96e;
+            --light-gold: #e8d9b9;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-xxl: 4rem;
+            
+            /* Typography */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            
+            /* Layout */
+            --container-max-width: 1200px;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --box-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ===== CSS RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+        }
+
+        h1 { font-size: var(--text-5xl); font-weight: 300; }
+        h2 { font-size: var(--text-4xl); }
+        h3 { font-size: var(--text-3xl); }
+
+        p { margin-bottom: var(--space-md); }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* ===== LAYOUT UTILITIES ===== */
+        .container {
+            width: 90%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+
+        .section {
+            padding: var(--space-xxl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--gold);
+            margin: var(--space-sm) auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-lg);
+            background-color: transparent;
+            border: 1px solid var(--charcoal);
+            color: var(--charcoal);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn:hover {
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .btn-outline {
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--charcoal);
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            padding: var(--space-lg) 0;
+        }
+
+        header.scrolled {
+            padding: var(--space-md) 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1001;
+        }
+
+        .logo span { color: var(--gold); }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-menu li { margin-left: var(--space-lg); }
+
+        .nav-menu a {
+            font-weight: 500;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: var(--space-xs) 0;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after { width: 100%; }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: var(--text-xl);
+            z-index: 1001;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 var(--space-md);
+        }
+
+        .hero h1 {
+            margin-bottom: var(--space-sm);
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards;
+        }
+
+        .hero p {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-lg);
+            opacity: 0;
+            animation: fadeIn 1s ease 1s forwards;
+        }
+
+        .hero-btns {
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-sm);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== INTRODUCTION SECTION ===== */
+        .intro {
+            background-color: var(--off-white);
+        }
+
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .intro-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .intro-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .intro-content h2 {
+            margin-bottom: var(--space-md);
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--text-2xl);
+            color: var(--gold);
+            margin: var(--space-md) 0;
+        }
+
+        /* ===== GALLERY STYLES ===== */
+        .gallery-header {
+            min-height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin: var(--space-lg) 0;
+        }
+
+        .filter-btn {
+            padding: var(--space-xs) var(--space-md);
+            background-color: transparent;
+            border: 1px solid var(--charcoal);
+            color: var(--charcoal);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            min-width: 100px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--space-md);
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: var(--space-md);
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .lightbox-info {
+            background-color: var(--white);
+            padding: var(--space-md);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: var(--text-2xl);
+            cursor: pointer;
+            z-index: 2001;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: var(--text-3xl);
+            cursor: pointer;
+            z-index: 2001;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-prev { left: var(--space-md); }
+        .lightbox-next { right: var(--space-md); }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+
+        .newsletter .section-title:after {
+            background-color: var(--gold);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: var(--space-xs);
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: var(--space-sm);
+            border: 1px solid var(--light-gray);
+            font-family: 'Inter', sans-serif;
+            font-size: var(--text-base);
+        }
+
+        .newsletter-btn {
+            background-color: var(--gold);
+            border: 1px solid var(--gold);
+            color: var(--charcoal);
+            font-weight: 600;
+            padding: var(--space-sm) var(--space-md);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--light-gold);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: var(--white);
+            padding: var(--space-xl) 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-logo span { color: var(--gold); }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--gold);
+            border-color: var(--gold);
+            color: var(--charcoal);
+        }
+
+        .footer-links h3 {
+            margin-bottom: var(--space-md);
+            font-size: var(--text-lg);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: var(--space-xl);
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: var(--text-sm);
+        }
+
+        /* ===== PAGE CONTENT ===== */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            :root { --text-5xl: 3.5rem; }
+            
+            .hero-btns { flex-wrap: nowrap; }
+            
+            .intro-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .nav-menu { display: flex !important; }
+            .hamburger { display: none; }
+        }
+
+        /* Small devices (landscape phones, less than 768px) */
+        @media (max-width: 767px) {
+            .hamburger { display: block; }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 100px;
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active { left: 0; }
+            .nav-menu li { margin: var(--space-md) 0; }
+            
+            .hero h1 { font-size: var(--text-4xl); }
+            .hero p { font-size: var(--text-base); }
+            
+            .section { padding: var(--space-xl) 0; }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        /* Extra small devices (phones, less than 576px) */
+        @media (max-width: 575px) {
+            .hero-btns .btn {
+                display: block;
+                margin: var(--space-xs) auto;
+                width: 200px;
+            }
+            
+            .newsletter-form { flex-direction: column; }
+            .newsletter-input { margin-bottom: var(--space-xs); }
+            
+            .gallery-grid { grid-template-columns: 1fr; }
+            
+            .filter-btn {
+                min-width: 80px;
+                font-size: var(--text-xs);
+                padding: var(--space-xs) var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo" data-page="home">Elena<span>Vance</span></a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li><a href="#" data-page="about">About</a></li>
+                    <li><a href="#" data-page="gallery">Gallery</a></li>
+                    <li><a href="#" data-page="commissions">Commissions</a></li>
+                    <li><a href="#" data-page="exhibitions">Exhibitions</a></li>
+                    <li><a href="#" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home-page" class="page-content active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-bg"></div>
+                <div class="hero-content">
+                    <h1>Elena Vance</h1>
+                    <p>Contemporary Fine Art Painter</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn btn-outline" data-page="gallery">View Gallery</a>
+                        <a href="#" class="btn btn-outline" data-page="commissions">Commission Artwork</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Introduction Section -->
+            <section class="section intro">
+                <div class="container intro-container">
+                    <div class="intro-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=776&q=80" alt="Elena Vance portrait">
+                    </div>
+                    <div class="intro-content">
+                        <h2>About the Artist</h2>
+                        <p>Elena Vance is a contemporary fine art painter whose work explores the intersection of memory, emotion, and the natural world. With over 15 years of professional experience, her paintings have been exhibited in galleries across Europe and North America.</p>
+                        <p>Her distinctive style combines classical techniques with modern sensibilities, creating works that are both timeless and contemporary. Each piece is a journey into color, texture, and form, inviting viewers to explore their own emotional landscapes.</p>
+                        <div class="signature">Elena Vance</div>
+                        <a href="#" class="btn" data-page="about">Read Full Biography</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="section newsletter">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Stay Connected</h2>
+                        <p>Subscribe for updates on new works, exhibitions, and special events</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="gallery-page" class="page-content">
+            <section class="gallery-header">
+                <div class="container">
+                    <h1>Art Gallery</h1>
+                    <p>Explore diverse collection of contemporary artworks</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="gallery-filters">
+                        <button class="filter-btn active" data-filter="all">All Works</button>
+                        <button class="filter-btn" data-filter="abstract">Abstract</button>
+                        <button class="filter-btn" data-filter="modern">Modern</button>
+                        <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+                        <button class="filter-btn" data-filter="portraits">Portraits</button>
+                        <button class="filter-btn" data-filter="mixed">Mixed Media</button>
+                    </div>
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- Gallery items populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page-content">
+            <section class="gallery-header">
+                <div class="container">
+                    <h1>About the Artist</h1>
+                    <p>Learn about Elena's journey, inspiration, and artistic philosophy</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="intro-container">
+                        <div class="intro-content">
+                            <h2>Biography</h2>
+                            <p>Elena Vance was born in Florence, Italy, where she developed an early appreciation for Renaissance art and classical techniques. She studied at the Accademia di Belle Arti di Firenze before moving to New York to complete her MFA at the School of Visual Arts.</p>
+                            <p>Her work has been described as "a delicate balance between chaos and order, where emotion finds form through color and texture." Elena's paintings are held in private collections worldwide and have been featured in numerous solo and group exhibitions.</p>
+                            <p>When not in her studio, Elena teaches masterclasses in contemporary painting techniques and serves on the board of several arts organizations dedicated to supporting emerging artists.</p>
+                            <div class="signature">Elena Vance</div>
+                        </div>
+                        <div class="intro-image">
+                            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elena Vance in her studio">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Commissions Page -->
+        <div id="commissions-page" class="page-content">
+            <section class="gallery-header">
+                <div class="container">
+                    <h1>Commission Artwork</h1>
+                    <p>Create a custom piece tailored to your vision and space</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>The Commission Process</h2>
+                        <p>Working together to create your perfect piece</p>
+                    </div>
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <p>Commissioning a piece of art is a collaborative process that results in a unique work created specifically for you and your space. Elena works closely with clients to understand their vision, preferences, and the environment where the artwork will be displayed.</p>
+                        <p>The process typically involves an initial consultation, concept development, creation of the artwork, and final delivery. Commissioned pieces range in size, medium, and complexity, with pricing determined by these factors.</p>
+                        <p>To begin the conversation about your custom artwork, please contact Elena through the form below or schedule a consultation.</p>
+                        <div style="text-align: center; margin-top: var(--space-xl);">
+                            <a href="#" class="btn btn-primary" data-page="contact">Inquire About a Commission</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Exhibitions Page -->
+        <div id="exhibitions-page" class="page-content">
+            <section class="gallery-header">
+                <div class="container">
+                    <h1>Exhibitions</h1>
+                    <p>Past and upcoming shows featuring Elena's work</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Current & Upcoming Exhibitions</h2>
+                    </div>
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <div style="margin-bottom: var(--space-xl);">
+                            <h3>Chromatica: A Study in Color</h3>
+                            <p><strong>Gallery Moderna</strong> | New York, NY | October 15 - November 30, 2023</p>
+                            <p>A solo exhibition exploring the emotional resonance of color through a series of large-scale abstract works.</p>
+                        </div>
+                        <div style="margin-bottom: var(--space-xl);">
+                            <h3>Contemporary Visions 2023</h3>
+                            <p><strong>National Gallery of Contemporary Art</strong> | London, UK | December 5, 2023 - January 20, 2024</p>
+                            <p>Group exhibition featuring works by leading contemporary artists from around the world.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-title" style="margin-top: var(--space-xxl);">
+                        <h2>Past Exhibitions</h2>
+                    </div>
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <div style="margin-bottom: var(--space-lg);">
+                            <h3>Echoes of Memory</h3>
+                            <p><strong>Palazzo delle Arti</strong> | Florence, Italy | June 2022</p>
+                        </div>
+                        <div style="margin-bottom: var(--space-lg);">
+                            <h3>Form & Flow</h3>
+                            <p><strong>Contemporary Arts Center</strong> | Los Angeles, CA | March 2022</p>
+                        </div>
+                        <div style="margin-bottom: var(--space-lg);">
+                            <h3>Urban Landscapes</h3>
+                            <p><strong>Metropolitan Gallery</strong> | Chicago, IL | September 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page-content">
+            <section class="gallery-header">
+                <div class="container">
+                    <h1>Contact</h1>
+                    <p>Get in touch for inquiries, commissions, or collaborations</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="intro-container">
+                        <div class="intro-content">
+                            <h2>Send a Message</h2>
+                            <form id="contact-form" style="margin-top: var(--space-lg);">
+                                <div style="margin-bottom: var(--space-md);">
+                                    <input type="text" placeholder="Your Name" style="width: 100%; padding: var(--space-sm); border: 1px solid var(--light-gray); font-family: 'Inter', sans-serif;" required>
+                                </div>
+                                <div style="margin-bottom: var(--space-md);">
+                                    <input type="email" placeholder="Your Email" style="width: 100%; padding: var(--space-sm); border: 1px solid var(--light-gray); font-family: 'Inter', sans-serif;" required>
+                                </div>
+                                <div style="margin-bottom: var(--space-md);">
+                                    <select style="width: 100%; padding: var(--space-sm); border: 1px solid var(--light-gray); font-family: 'Inter', sans-serif;">
+                                        <option value="">Select Inquiry Type</option>
+                                        <option value="commission">Commission Inquiry</option>
+                                        <option value="exhibition">Exhibition Opportunity</option>
+                                        <option value="purchase">Purchase Inquiry</option>
+                                        <option value="collaboration">Collaboration</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div style="margin-bottom: var(--space-md);">
+                                    <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: var(--space-sm); border: 1px solid var(--light-gray); font-family: 'Inter', sans-serif;" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                            </form>
+                        </div>
+                        <div class="intro-content">
+                            <h2>Contact Information</h2>
+                            <div style="margin-top: var(--space-lg);">
+                                <p><strong>Studio Address:</strong><br>
+                                123 Artisan Way<br>
+                                Brooklyn, NY 11201</p>
+                                
+                                <p><strong>Email:</strong><br>
+                                contact@elenavance.com</p>
+                                
+                                <p><strong>Phone:</strong><br>
+                                +1 (555) 123-4567</p>
+                                
+                                <p><strong>Studio Hours:</strong><br>
+                                By appointment only</p>
+                            </div>
+                            
+                            <h3 style="margin-top: var(--space-xl);">Frequently Asked Questions</h3>
+                            <div style="margin-top: var(--space-md);">
+                                <p><strong>Do you ship internationally?</strong><br>
+                                Yes, artwork can be shipped worldwide with professional art handlers.</p>
+                                
+                                <p><strong>What is the typical timeline for a commission?</strong><br>
+                                Commission timelines vary but generally range from 4-12 weeks depending on size and complexity.</p>
+                                
+                                <p><strong>Do you offer payment plans?</strong><br>
+                                Yes, payment plans can be arranged for commissions and larger purchases.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Elena<span>Vance</span></div>
+                    <p>Contemporary fine art painter creating abstract, modern, and landscape masterpieces.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About</a></li>
+                        <li><a href="#" data-page="gallery">Gallery</a></li>
+                        <li><a href="#" data-page="commissions">Commissions</a></li>
+                        <li><a href="#" data-page="exhibitions">Exhibitions</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elena Vance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-details"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery data
+        const galleryItems = [
+            {
+                id: 1,
+                title: "Azure Depths",
+                category: "abstract",
+                image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80",
+                details: "Acrylic on canvas, 36x48 inches, 2023"
+            },
+            {
+                id: 2,
+                title: "Verdant Echoes",
+                category: "landscapes",
+                image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+                details: "Oil on canvas, 24x36 inches, 2023"
+            },
+            {
+                id: 3,
+                title: "Crimson Whispers",
+                category: "abstract",
+                image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2066&q=80",
+                details: "Mixed media, 30x40 inches, 2023"
+            },
+            {
+                id: 4,
+                title: "Urban Reflections",
+                category: "modern",
+                image: "https://images.unsplash.com/photo-1550275994-cdc89cd1948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                details: "Acrylic on canvas, 48x60 inches, 2022"
+            },
+            {
+                id: 5,
+                title: "Serenity",
+                category: "portraits",
+                image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80",
+                details: "Oil on canvas, 20x24 inches, 2022"
+            },
+            {
+                id: 6,
+                title: "Golden Horizon",
+                category: "landscapes",
+                image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                details: "Oil on canvas, 30x40 inches, 2022"
+            },
+            {
+                id: 7,
+                title: "Ethereal Forms",
+                category: "mixed",
+                image: "https://images.unsplash.com/photo-1550275994-cdc89cd1948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                details: "Mixed media on wood panel, 24x36 inches, 2023"
+            },
+            {
+                id: 8,
+                title: "Contemplation",
+                category: "portraits",
+                image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+                details: "Charcoal and pastel on paper, 18x24 inches, 2023"
+            }
+        ];
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGallery();
+            setupNavigation();
+            setupForms();
+            setupLightbox();
+        });
+
+        function initializeGallery() {
+            renderGallery();
+            setupGalleryFilters();
+        }
+
+        function setupNavigation() {
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                const isExpanded = navMenu.classList.contains('active');
+                hamburger.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Page navigation
+            const navLinks = document.querySelectorAll('.nav-menu a, .logo, .hero-btns a, .footer-links a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-page')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const pageName = this.getAttribute('data-page');
+                        navigateToPage(pageName);
+                        navMenu.classList.remove('active');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    });
+                }
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        function setupForms() {
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('.newsletter-input').value;
+                    alert(`Thank you for subscribing with ${email}! You'll receive updates on new works and exhibitions.`);
+                    this.reset();
+                });
+            }
+
+            // Contact form
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! Elena will get back to you within 2-3 business days.');
+                    this.reset();
+                });
+            }
+        }
+
+        function setupLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxDetails = document.getElementById('lightbox-details');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            
+            let currentImageIndex = 0;
+            
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+            lightboxNext.addEventListener('click', () => navigateLightbox(1));
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'Escape') closeLightbox();
+                    else if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                    else if (e.key === 'ArrowRight') navigateLightbox(1);
+                }
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = 'auto';
+            }
+
+            function openLightbox(index) {
+                currentImageIndex = index;
+                const item = galleryItems[index];
+                
+                lightboxImg.src = item.image;
+                lightboxImg.alt = item.title;
+                lightboxTitle.textContent = item.title;
+                lightboxDetails.textContent = item.details;
+                
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                lightboxClose.focus();
+            }
+
+            function navigateLightbox(direction) {
+                currentImageIndex += direction;
+                if (currentImageIndex < 0) currentImageIndex = galleryItems.length - 1;
+                else if (currentImageIndex >= galleryItems.length) currentImageIndex = 0;
+                openLightbox(currentImageIndex);
+            }
+
+            // Make functions globally available
+            window.openLightbox = openLightbox;
+            window.navigateLightbox = navigateLightbox;
+        }
+
+        // Gallery functions
+        function renderGallery() {
+            const galleryGrid = document.getElementById('gallery-grid');
+            if (!galleryGrid) return;
+            
+            galleryGrid.innerHTML = '';
+            
+            galleryItems.forEach((item, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.setAttribute('data-category', item.category);
+                galleryItem.innerHTML = `
+                    <div class="gallery-img" style="background-image: url('${item.image}')" aria-label="${item.title}"></div>
+                    <div class="gallery-overlay">
+                        <h3>${item.title}</h3>
+                        <p>${item.details}</p>
+                    </div>
+                `;
+                
+                galleryItem.addEventListener('click', () => openLightbox(index));
+                galleryItem.setAttribute('tabindex', '0');
+                galleryItem.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+                
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+
+        function setupGalleryFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.removeAttribute('aria-current');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-current', 'true');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    filterGallery(filter);
+                });
+            });
+        }
+
+        function filterGallery(category) {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Page navigation
+        function navigateToPage(pageName) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.getElementById(`${pageName}-page`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+                
+                // Update active nav link
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-page') === pageName) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
